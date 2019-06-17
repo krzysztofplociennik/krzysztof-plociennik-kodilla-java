@@ -29,7 +29,7 @@ public class ShapeCollector {
     public boolean showFigures() {
         if(collectionOfShapes.size()>0) {
             for (Shape inst : collectionOfShapes) {
-                System.out.println(inst.getShapeName() + " " + inst.getField());
+                System.out.println(inst.getShapeName() + " = " + inst.getField());
             }
             return true;
         } else return false;

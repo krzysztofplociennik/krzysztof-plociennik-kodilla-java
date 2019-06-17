@@ -1,12 +1,5 @@
 package com.kodilla.testing.shape;
-import com.kodilla.testing.shape.ShapeCollector;
-import com.kodilla.testing.shape.Circle;
-import com.kodilla.testing.shape.Square;
-import com.kodilla.testing.shape.Triangle;
-import com.kodilla.testing.shape.Shape;
 import org.junit.*;
-
-import java.util.ArrayList;
 
 public class ShapeCollectorTestSuite {
 
@@ -31,12 +24,9 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure() {
         //Given
-        //ArrayList<Shape> collectionOfShapes = new ArrayList<Shape>();
         ShapeCollector collectorObject = new ShapeCollector();
-
         //When
         collectorObject.addFigure(new Circle("c1", 3));
-
         //Then
         Assert.assertEquals(1, collectorObject.getSize());
     }
@@ -44,16 +34,13 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        //ArrayList<Shape> collectionOfShapes = new ArrayList<Shape>();
         ShapeCollector collectorObject = new ShapeCollector();
         collectorObject.addFigure(new Circle("c1", 3));
         collectorObject.addFigure(new Circle("c2", 2));
         Shape c3 = new Circle("c3", 5);
         collectorObject.addFigure(c3);
-
         //When
         boolean result = collectorObject.removeFigure(c3);
-
         //Then
         Assert.assertTrue(result);
         Assert.assertEquals(2, collectorObject.getSize());
@@ -65,29 +52,25 @@ public class ShapeCollectorTestSuite {
         ShapeCollector collectorObject = new ShapeCollector();
         Shape c1 = new Circle("c1", 5);
         collectorObject.addFigure(c1);
-
         //When
-        Shape currectShape;
-        currectShape = collectorObject.getFigure(0);
-
+        Shape currentShape;
+        currentShape = collectorObject.getFigure(0);
         //Then
-        Assert.assertEquals(c1, currectShape);
+        Assert.assertEquals(c1, currentShape);
     }
 
     @Test
     public void testShowFigures() {
         //Given
         ShapeCollector collectorObject = new ShapeCollector();
-        Shape c1 = new Circle("c1", 1);
-        Shape c2 = new Square("s1", 1);
-        Shape c3 = new Triangle("t1", 1, 1);
+        Shape c1 = new Circle("Test circle", 1);
+        Shape s1 = new Square("Test square", 1);
+        Shape t1 = new Triangle("Test triange", 1, 1);
         collectorObject.addFigure(c1);
-        collectorObject.addFigure(c2);
-        collectorObject.addFigure(c3);
-
+        collectorObject.addFigure(s1);
+        collectorObject.addFigure(t1);
         //When
         boolean contentsOfTheList = collectorObject.showFigures();
-
         //Then
         Assert.assertTrue(contentsOfTheList);
     }
