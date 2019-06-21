@@ -91,18 +91,22 @@ public class BookDirectoryTestSuite {
     @Test
     public void testListOfBorrowedBooks1() {
         // Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         ArrayList<Book> marcinBorrowed = new ArrayList<>();
         LibraryUser Marcin = new LibraryUser("Marcin", "Legierski", "86101206237", marcinBorrowed);
 
         // When
 
         // Then
-        Assert.assertEquals(0, Marcin.getBorrowedBooks().size());
+        Assert.assertEquals(0, bookLibrary.listBooksInHandsOf(Marcin).size());
     }
 
     @Test
     public void testListOfBorrowedBooks2() {
         // Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         ArrayList<Book> marcinBorrowed = new ArrayList<>();
         LibraryUser Marcin = new LibraryUser("Marcin", "Legierski", "86101206237", marcinBorrowed);
 
@@ -110,12 +114,14 @@ public class BookDirectoryTestSuite {
         Marcin.addBook(new Book("aaaaa", "asdsd", 1990));
 
         // Then
-        Assert.assertEquals(1, Marcin.getBorrowedBooks().size());
+        Assert.assertEquals(1, bookLibrary.listBooksInHandsOf(Marcin).size());
     }
 
     @Test
     public void testListOfBorrowedBooks3() {
         // Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         ArrayList<Book> marcinBorrowed = new ArrayList<>();
         LibraryUser Marcin = new LibraryUser("Marcin", "Legierski", "86101206237", marcinBorrowed);
 
@@ -127,6 +133,6 @@ public class BookDirectoryTestSuite {
         Marcin.addBook(new Book("aaaaa", "asdsd", 1990));
 
         // Then
-        Assert.assertEquals(5, Marcin.getBorrowedBooks().size());
+        Assert.assertEquals(5, bookLibrary.listBooksInHandsOf(Marcin).size());
     }
 }
