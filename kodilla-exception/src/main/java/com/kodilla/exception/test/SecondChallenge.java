@@ -9,7 +9,6 @@ public class SecondChallenge {
     }
 
     public static void main(String[] args) {
-
         ExceptionHandling exceptionHandling = new ExceptionHandling();
         exceptionHandling.exceptionHandler();
     }
