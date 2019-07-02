@@ -9,7 +9,15 @@ public class SecondChallenge {
     }
 
     public static void main(String[] args) {
-        ExceptionHandling exceptionHandling = new ExceptionHandling();
-        exceptionHandling.exceptionHandler();
+
+        SecondChallenge secondChallenge = new SecondChallenge();
+
+        try {
+            secondChallenge.probablyIWillThrowException(11, 7);
+        } catch (ExceptionHandling e) {
+            System.out.println("Bad number!");
+        } finally {
+            System.out.println("Ok!");
+        }
     }
 }
