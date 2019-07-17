@@ -12,16 +12,13 @@ public class FileReader {
     public void readFile() throws FileReaderException{
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/names.txt").getFile());
-        //System.out.println(file.getPath());
-        //Path path = Paths.get(file.getPath());
-        Path path = Paths.get("file/nameas.txt");
+        Path path = Paths.get("file/names.txt");
 
         try {
             Stream<String> fileLines = Files.lines(path);
             fileLines.forEach(System.out::println);
 
         } catch (IOException e) {
-            //System.out.println("Something went wrong! Error: " + e);
             throw new FileReaderException();
 
         } finally {
