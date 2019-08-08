@@ -160,7 +160,7 @@ public class BoardTestSuite {
                 .count();
 
         //Then
-        Assert.assertEquals(10, days/instances, 0.01);
+        Assert.assertEquals(-10.6, days/instances, 0.1);
     }
 
     @Test
@@ -192,6 +192,6 @@ public class BoardTestSuite {
                 .average();
 
         //Then
-        Assert.assertEquals(10, result.getAsDouble(), 0.01);
+        Assert.assertEquals(-10.6, result.getAsDouble(), 0.1);
     }
 }
