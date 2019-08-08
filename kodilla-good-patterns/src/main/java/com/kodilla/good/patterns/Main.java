@@ -53,6 +53,7 @@ public class Main {
         FlightFinder flightFinder = new FlightFinder();
         flightFinder.findFlyingFrom("Warszawa");
         flightFinder.findFlyingTo("Szczecin");
-        flightFinder.findFlyingThrough("Łódź");
+        flightFinder.findFlyingThrough("Szczecin", "Rzeszów");
+
     }
 }
