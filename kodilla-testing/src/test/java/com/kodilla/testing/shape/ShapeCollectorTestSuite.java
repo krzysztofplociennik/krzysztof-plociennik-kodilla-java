@@ -65,7 +65,7 @@ public class ShapeCollectorTestSuite {
         ShapeCollector collectorObject = new ShapeCollector();
         Shape c1 = new Circle("Test circle", 1);
         Shape s1 = new Square("Test square", 1);
-        Shape t1 = new Triangle("Test triange", 1, 1);
+        Shape t1 = new Triangle("Test triangle", 1, 1);
         collectorObject.addFigure(c1);
         collectorObject.addFigure(s1);
         collectorObject.addFigure(t1);
