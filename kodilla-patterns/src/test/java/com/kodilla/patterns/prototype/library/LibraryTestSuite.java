@@ -1,5 +1,6 @@
 package com.kodilla.patterns.prototype.library;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -38,6 +39,11 @@ public class LibraryTestSuite {
         library.getBooks().remove(book2);
 
         //Then
+        Assert.assertEquals(2, library.getBooks().size());
+        Assert.assertEquals(2, clonedLibrary.getBooks().size());
+        Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
+        Assert.assertEquals(library.getBooks(), clonedLibrary.getBooks());
+        Assert.assertNotEquals(library.getBooks(), deepClonedLibrary.getBooks());
         System.out.println("Libraries after removing: \n" + library + "\n" + clonedLibrary+ "\n" + deepClonedLibrary);
     }
 }
