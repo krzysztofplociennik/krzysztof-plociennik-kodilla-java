@@ -27,7 +27,7 @@ public final class Facade {
         Query query = entityManager.createQuery(sqlString, Employee.class);
         List<Employee> employeeResultList = query.getResultList();
 
-        if(keyword == "") {
+        if(keyword.equals("")) {
             LOGGER.error(SearchProcessingException.ERR_NO_PHRASE_GIVEN);
             throw new SearchProcessingException(SearchProcessingException.ERR_NO_PHRASE_GIVEN);
         }
@@ -55,7 +55,7 @@ public final class Facade {
         Query query = entityManager.createQuery(sqlString, Company.class);
         List<Company> companyResultList = query.getResultList();
 
-        if(keyword == "") {
+        if(keyword.equals("")) {
             LOGGER.error(SearchProcessingException.ERR_NO_PHRASE_GIVEN);
             throw new SearchProcessingException(SearchProcessingException.ERR_NO_PHRASE_GIVEN);
         }
