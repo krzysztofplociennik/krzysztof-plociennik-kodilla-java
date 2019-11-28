@@ -1,7 +1,9 @@
 package com.kodilla.patterns2.decorator.taxiportal;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 import java.math.BigDecimal;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class TaxiOrderTestSuite {
     @Test

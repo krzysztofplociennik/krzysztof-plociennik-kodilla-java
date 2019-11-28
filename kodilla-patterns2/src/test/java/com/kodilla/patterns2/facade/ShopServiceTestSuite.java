@@ -3,11 +3,14 @@ import com.kodilla.patterns2.facade.api.ItemDto;
 import com.kodilla.patterns2.facade.api.OrderDto;
 import com.kodilla.patterns2.facade.api.OrderFacade;
 import com.kodilla.patterns2.facade.api.OrderProcessingException;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ShopServiceTestSuite {
 
